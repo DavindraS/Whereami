@@ -8,22 +8,43 @@
 
 #import "WhereamiViewController.h"
 
-@interface WhereamiViewController ()
-
-@end
-
 @implementation WhereamiViewController
 
-- (void)viewDidLoad
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    
+    if (self) {
+        // Create the location manager object
+        locationManager = [[CLLocationManager alloc] init];
+        
+        // We want to be as accurate as possible
+        [locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
+        
+        // Set this viewcontroller as the delegate to CLLocationManager
+        [locationManager setDelegate:self];
+        
+        // Tell our manager to start looking for its location immediately
+        [locationManager startUpdatingLocation];
+    }
+    return self;
 }
 
-- (void)didReceiveMemoryWarning
+- (void)locationManager:(CLLocationManager *)manager
+     didUpdateLocations:(NSArray *)locations
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    NSLog(@"%@", [locations objectAtIndex:0]);
+}
+
+- (void)locationManager:(CLLocationManager *)manager
+       didFailWithError:(NSError *)error
+{
+    NSLog(@"Could not find location: %@", error);
+}
+
+- (void)dealloc
+{
+    [locationManager setDelegate:nil];
 }
 
 @end

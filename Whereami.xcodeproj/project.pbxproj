@@ -21,6 +21,7 @@
 		C4DF9BC017E8F0430047ED58 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4DF9BA217E8F0430047ED58 /* UIKit.framework */; };
 		C4DF9BC817E8F0430047ED58 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C4DF9BC617E8F0430047ED58 /* InfoPlist.strings */; };
 		C4DF9BCA17E8F0430047ED58 /* WhereamiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C4DF9BC917E8F0430047ED58 /* WhereamiTests.m */; };
+		C4DF9BD417E8F1090047ED58 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4DF9BD317E8F1090047ED58 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		C4DF9BC517E8F0430047ED58 /* WhereamiTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WhereamiTests-Info.plist"; sourceTree = "<group>"; };
 		C4DF9BC717E8F0430047ED58 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C4DF9BC917E8F0430047ED58 /* WhereamiTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WhereamiTests.m; sourceTree = "<group>"; };
+		C4DF9BD317E8F1090047ED58 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4DF9BD417E8F1090047ED58 /* CoreLocation.framework in Frameworks */,
 				C4DF9BA117E8F0430047ED58 /* CoreGraphics.framework in Frameworks */,
 				C4DF9BA317E8F0430047ED58 /* UIKit.framework in Frameworks */,
 				C4DF9B9F17E8F0430047ED58 /* Foundation.framework in Frameworks */,
@@ -101,6 +104,7 @@
 		C4DF9B9D17E8F0430047ED58 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C4DF9BD317E8F1090047ED58 /* CoreLocation.framework */,
 				C4DF9B9E17E8F0430047ED58 /* Foundation.framework */,
 				C4DF9BA017E8F0430047ED58 /* CoreGraphics.framework */,
 				C4DF9BA217E8F0430047ED58 /* UIKit.framework */,
@@ -379,6 +383,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Whereami/Whereami-Prefix.pch";
 				INFOPLIST_FILE = "Whereami/Whereami-Info.plist";
@@ -392,6 +397,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Whereami/Whereami-Prefix.pch";
 				INFOPLIST_FILE = "Whereami/Whereami-Info.plist";
