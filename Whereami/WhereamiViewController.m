@@ -15,25 +15,28 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     
     if (self) {
-        // Create the location manager object
+        
+        // Create location manager object
         locationManager = [[CLLocationManager alloc] init];
         
-        // We want to be as accurate as possible
+        // Set the desired accuracy to be the most accurate
         [locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
         
-        // Set this viewcontroller as the delegate to CLLocationManager
-        [locationManager setDelegate:self];
-        
-        // Tell our manager to start looking for its location immediately
+        // Tell the manager to start looking for its location immediately
         [locationManager startUpdatingLocation];
     }
+    
     return self;
 }
 
+// Since the method in the book has been deprecated. Docs say to use this method
 - (void)locationManager:(CLLocationManager *)manager
      didUpdateLocations:(NSArray *)locations
 {
-    NSLog(@"%@", [locations objectAtIndex:0]);
+    // The locations array will have CLLocation objects in it
+    // I get the most recent location (at the end of the array)
+    // and get it's description
+    NSLog(@"%@", [[locations objectAtIndex:[locations count]] description]);
 }
 
 - (void)locationManager:(CLLocationManager *)manager
