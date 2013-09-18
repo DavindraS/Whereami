@@ -27,6 +27,10 @@
     // Set the desired accuracy to be the most accurate
     [locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
     
+    // BRONZE CHALLENGE: Change the CLLocationManager so that it only updates its delegate with a new location
+    // if the device has moved more than 50 meters
+    [locationManager setDistanceFilter:50];
+    
     // Tell the manager to start looking for its location immediately
     [locationManager startUpdatingLocation];
     
