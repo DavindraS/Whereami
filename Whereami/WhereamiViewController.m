@@ -37,13 +37,6 @@
     NSLog(@"%@", [[locations objectAtIndex:([locations count] - 1)] description]);
 }
 
-// SILVER CHALLENGE: Using delegation, retrieve the heading information from the CLLocationManager
-// and print it to the console
-- (void)locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading
-{
-    NSLog(@"%@", newHeading);
-}
-
 - (void)locationManager:(CLLocationManager *)manager
        didFailWithError:(NSError *)error
 {
