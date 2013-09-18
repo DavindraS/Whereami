@@ -13,30 +13,20 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     
+    if (self) {
+        
+        locationManager = [[CLLocationManager alloc] init];
+        [locationManager setDelegate:self];
+        [locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
+    
+    }
     return self;
 }
 
 - (void)viewDidLoad
 {
-    // Create location manager object
-    locationManager = [[CLLocationManager alloc] init];
-    
-    // Set this object to be the delegate for the CLLocationManager
-    [locationManager setDelegate:self];
-    
-    // Set the desired accuracy to be the most accurate
-    [locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
-    
-    // BRONZE CHALLENGE: Change the CLLocationManager so that it only updates its delegate with a new location
-    // if the device has moved more than 50 meters
-    [locationManager setDistanceFilter:50];
-    
-    // SILVER CHALLENGE: Tell the location manager to start updating the heading
-    [locationManager startUpdatingHeading];
-    
-    // Tell the manager to start looking for its location immediately
-    [locationManager startUpdatingLocation];
-    
+    // MKMapView determines location
+    [worldView setShowsUserLocation:YES];
 }
 
 // Method locationManager:didUpdateToLocation:fromLocation is deprecated
