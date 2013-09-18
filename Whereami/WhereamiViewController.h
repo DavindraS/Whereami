@@ -13,7 +13,7 @@
 {
     CLLocationManager *locationManager;
     
-    IBOutlet MKMapView *worldView
+    IBOutlet MKMapView *worldView;
     IBOutlet UIActivityIndicatorView *activityIndicator;
     IBOutlet UITextField *locationTitleField;
 }
