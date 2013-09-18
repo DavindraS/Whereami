@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C4D93BE217E9F33800F43B57 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4D93BE117E9F33800F43B57 /* MapKit.framework */; };
 		C4DF9B9F17E8F0430047ED58 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4DF9B9E17E8F0430047ED58 /* Foundation.framework */; };
 		C4DF9BA117E8F0430047ED58 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4DF9BA017E8F0430047ED58 /* CoreGraphics.framework */; };
 		C4DF9BA317E8F0430047ED58 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4DF9BA217E8F0430047ED58 /* UIKit.framework */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C4D93BE117E9F33800F43B57 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C4DF9B9B17E8F0430047ED58 /* Whereami.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Whereami.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4DF9B9E17E8F0430047ED58 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C4DF9BA017E8F0430047ED58 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -62,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4D93BE217E9F33800F43B57 /* MapKit.framework in Frameworks */,
 				C4DF9BD417E8F1090047ED58 /* CoreLocation.framework in Frameworks */,
 				C4DF9BA117E8F0430047ED58 /* CoreGraphics.framework in Frameworks */,
 				C4DF9BA317E8F0430047ED58 /* UIKit.framework in Frameworks */,
@@ -104,6 +107,7 @@
 		C4DF9B9D17E8F0430047ED58 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C4D93BE117E9F33800F43B57 /* MapKit.framework */,
 				C4DF9BD317E8F1090047ED58 /* CoreLocation.framework */,
 				C4DF9B9E17E8F0430047ED58 /* Foundation.framework */,
 				C4DF9BA017E8F0430047ED58 /* CoreGraphics.framework */,
@@ -467,6 +471,7 @@
 				C4DF9BCF17E8F0430047ED58 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C4DF9BD017E8F0430047ED58 /* Build configuration list for PBXNativeTarget "WhereamiTests" */ = {
 			isa = XCConfigurationList;
@@ -475,6 +480,7 @@
 				C4DF9BD217E8F0430047ED58 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
