@@ -31,6 +31,9 @@
     // if the device has moved more than 50 meters
     [locationManager setDistanceFilter:50];
     
+    // SILVER CHALLENGE: Tell the location manager to start updating the heading
+    [locationManager startUpdatingHeading];
+    
     // Tell the manager to start looking for its location immediately
     [locationManager startUpdatingLocation];
     
@@ -42,6 +45,13 @@
      didUpdateLocations:(NSArray *)locations
 {
     NSLog(@"%@", [[locations objectAtIndex:([locations count] - 1)] description]);
+}
+
+// SILVER CHALLENGE: Using delegation, retrieve the heading information from the CLLocationManager
+// and print it to the console
+- (void)locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading
+{
+    NSLog(@"%@", newHeading);
 }
 
 - (void)locationManager:(CLLocationManager *)manager
