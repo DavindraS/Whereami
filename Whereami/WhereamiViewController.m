@@ -6,6 +6,7 @@
 //
 
 #import "WhereamiViewController.h"
+#import "BNRMapPoint.h"
 
 @implementation WhereamiViewController
 
@@ -54,6 +55,45 @@
     CLLocationCoordinate2D loc = [userLocation coordinate];
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(loc, 250, 250);
     [worldView setRegion:region animated:YES];
+}
+
+// UITextField delegate protocol method
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    // When you finished typing
+    [self findLocation];
+    
+    [textField resignFirstResponder];
+    
+    return YES;
+}
+
+- (void)findLocation
+{
+    [locationManager startUpdatingLocation];
+    [activityIndicator startAnimating];
+    [locationTitleField setHidden:YES];
+}
+
+- (void)foundLocation:(CLLocation *)loc
+{
+    CLLocationCoordinate2D coord = [loc coordinate];
+    
+    // Create an instance of BNRMapPoint with current data
+    BNRMapPoint *mp = [[BNRMapPoint alloc] initWithCoordinate:coord title:[locationTitleField text]];
+    
+    // Add the BNRMapPoint to the worldView
+    [worldView addAnnotation:mp];
+    
+    // Zoom to this location
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coord, 250, 250);
+    [worldView setRegion:region animated:YES];
+    
+    // Reset the UI
+    [locationTitleField setText:@""];
+    [activityIndicator stopAnimating];
+    [locationTitleField setHidden:NO];
+    [locationManager stopUpdatingLocation];
 }
 
 @end
