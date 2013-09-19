@@ -15,10 +15,6 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     
     if (self) {
-        
-        locationManager = [[CLLocationManager alloc] init];
-        [locationManager setDelegate:self];
-        [locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
     
     }
     return self;
@@ -26,6 +22,10 @@
 
 - (void)viewDidLoad
 {
+    locationManager = [[CLLocationManager alloc] init];
+    [locationManager setDelegate:self];
+    [locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
+    
     // MKMapView determines location
     [worldView setShowsUserLocation:YES];
 }
@@ -36,6 +36,19 @@
      didUpdateLocations:(NSArray *)locations
 {
     NSLog(@"%@", [[locations objectAtIndex:([locations count] - 1)] description]);
+    
+    // How many seconds ago was this new location created?
+    CLLocation *c = [locations objectAtIndex:([locations count] - 1)];
+    NSTimeInterval t = [[c timestamp] timeIntervalSinceNow];
+    
+    // If the locaiton was made more than 3 minutes ago, ignore it.
+    if (t < -180) {
+        // This is cached data, keep looking
+        return;
+    }
+    
+    [self foundLocation:c];
+    
 }
 
 - (void)locationManager:(CLLocationManager *)manager
