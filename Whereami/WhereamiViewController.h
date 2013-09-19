@@ -16,9 +16,11 @@
     IBOutlet MKMapView *worldView;
     IBOutlet UIActivityIndicatorView *activityIndicator;
     IBOutlet UITextField *locationTitleField;
+    IBOutlet UISegmentedControl *segCont;
 }
 
 - (void)findLocation;
 - (void)foundLocation:(CLLocation *)loc;
+- (void)didChangeSegment;
 
 @end

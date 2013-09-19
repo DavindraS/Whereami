@@ -36,12 +36,22 @@
                                 <rect key="frame" x="150" y="79" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rcP-Zd-r0k">
+                                <rect key="frame" x="20" y="525" width="280" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Standard"/>
+                                    <segment title="Satellite"/>
+                                    <segment title="Hybrid"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="XTf-Rz-EF3" id="voG-5k-70R"/>
                         <outlet property="locationTitleField" destination="Gm9-mT-bcP" id="Hnc-Aa-F2e"/>
+                        <outlet property="segCont" destination="rcP-Zd-r0k" id="eBq-OX-mbX"/>
                         <outlet property="worldView" destination="jKf-TD-rVj" id="c3k-dt-MMK"/>
                     </connections>
                 </viewController>

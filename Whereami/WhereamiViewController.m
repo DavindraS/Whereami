@@ -16,8 +16,8 @@
     [locationManager setDelegate:self];
     [locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
     
-    // BRONZE CHALLENGE: Make the map display satellite imagery
-    [worldView setMapType:MKMapTypeSatellite];
+    // Action for when a segment is clicked
+    [segCont addTarget:self action:@selector(didChangeSegment) forControlEvents:UIControlEventValueChanged];
     
     // MKMapView determines location
     [worldView setShowsUserLocation:YES];
@@ -100,6 +100,23 @@
     [activityIndicator stopAnimating];
     [locationTitleField setHidden:NO];
     [locationManager stopUpdatingLocation];
+}
+
+- (void)didChangeSegment
+{
+    
+    if ([segCont selectedSegmentIndex] == 0) {
+        
+        [worldView setMapType:MKMapTypeStandard];
+    }
+    else if([segCont selectedSegmentIndex] == 1){
+        
+        [worldView setMapType:MKMapTypeSatellite];
+    }
+    else if([segCont selectedSegmentIndex] == 2){
+        
+        [worldView setMapType:MKMapTypeHybrid];
+    }
 }
 
 @end
