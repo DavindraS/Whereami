@@ -9,14 +9,15 @@
 
 @implementation BNRMapPoint
 
-@synthesize coordinate, title;
+@synthesize coordinate, title, subtitle;
 
-- (id)initWithCoordinate:(CLLocationCoordinate2D)c title:(NSString *)t
+- (id)initWithCoordinate:(CLLocationCoordinate2D)c title:(NSString *)t subtitle:(NSString *)date
 {
     self = [super init];
     if (self) {
         coordinate = c;
         [self setTitle:t];
+        [self setSubtitle:date];
     }
     return self;
 }
@@ -24,7 +25,9 @@
 // Override the default initializer with our own
 - (id)init
 {
-    return [self initWithCoordinate:CLLocationCoordinate2DMake(43.07, -89.32) title:@"Hometown"];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    NSDate *d = [[NSDate alloc] init];
+    return [self initWithCoordinate:CLLocationCoordinate2DMake(43.07, -89.32) title:@"Hometown" subtitle:[dateFormatter stringFromDate:d]];
 }
 
 @end

@@ -14,12 +14,15 @@
 }
 
 // Designated initializer for instances of BNRMapPoint
-- (id)initWithCoordinate:(CLLocationCoordinate2D)c title:(NSString *)t;
+- (id)initWithCoordinate:(CLLocationCoordinate2D)c title:(NSString *)t subtitle:(NSString *)d;
 
 // Required property for MKAnnotation
 @property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
 
 // Optional property for MKAnnotation
 @property (nonatomic, copy) NSString *title;
+
+// Optional property for MKAnnotation
+@property (nonatomic, copy) NSString *subtitle;
 
 @end

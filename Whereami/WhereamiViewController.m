@@ -85,8 +85,12 @@
 {
     CLLocationCoordinate2D coord = [loc coordinate];
     
+    // Gold Challenge: Create a DateFormatter to show the date in the annotation
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateStyle:NSDateFormatterMediumStyle];
+    
     // Create an instance of BNRMapPoint with current data
-    BNRMapPoint *mp = [[BNRMapPoint alloc] initWithCoordinate:coord title:[locationTitleField text]];
+    BNRMapPoint *mp = [[BNRMapPoint alloc] initWithCoordinate:coord title:[locationTitleField text] subtitle:[formatter stringFromDate:[loc timestamp]]];
     
     // Add the BNRMapPoint to the worldView
     [worldView addAnnotation:mp];
