@@ -10,21 +10,14 @@
 
 @implementation WhereamiViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    
-    if (self) {
-    
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     locationManager = [[CLLocationManager alloc] init];
     [locationManager setDelegate:self];
     [locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
+    
+    // BRONZE CHALLENGE: Make the map display satellite imagery
+    [worldView setMapType:MKMapTypeSatellite];
     
     // MKMapView determines location
     [worldView setShowsUserLocation:YES];
