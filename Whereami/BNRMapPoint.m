@@ -16,7 +16,7 @@
     self = [super init];
     if (self) {
         coordinate = c;
-        [self setTitle:title];
+        [self setTitle:t];
     }
     return self;
 }
